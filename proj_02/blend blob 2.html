@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sketch 2_blend blob 2</title>
+	<style type="text/css">
+		body {
+			margin:0;
+		}
+		canvas {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+
+	<script>
+	function setup() {
+		createCanvas(windowWidth, windowHeight);
+}
+
+	function draw() {
+		blendMode(BLEND);
+
+	background(240);
+
+
+	blendMode(MULTIPLY);
+
+	noStroke();
+	translate(width/2,height/2);
+
+	fill(240,240,0);
+	circleLiquid(100,60,25,120);
+	
+	fill(0,240,240);
+	circleLiquid(50,50,15,0);
+
+// cerchio solido
+	circleSolid();
+
+	for(var i=1; i<50; i++) {
+            beginShape();
+            var num = i;
+            var r = 30;
+ 	for(var i=1; i<num; i++) {
+              var px = Math.cos(TWO_PI / num * i) * r;
+              var py = Math.sin(TWO_PI / num * i) * r;
+              vertex(px, py);
+            }
+
+            endShape(CLOSE);
+          }
+}
+
+function circleLiquid(vNnum,nm,sm,fcm){
+	push();
+	rotate(frameCount/fcm);
+	
+	let dr = TWO_PI/vNnum;
+	beginShape();
+		for(let i = 0; i  < vNnum + 0; i++){
+			let ind = i%vNnum;
+			let rad = dr *ind;
+			let r = height*0.2 + noise(frameCount/nm + ind) * height*0.2 + sin(frameCount/sm + ind)*height*0.05;
+		curveVertex(cos(rad)*r, sin(rad)*r);
+	}
+	endShape();
+	pop();
+}
+
+function circleSolid() {
+	var tx = -((windowWidth/2)-mouseX);
+	var ty = -((windowHeight/2)-mouseY);
+	translate(tx,ty);
+	
+	fill(80,100,30);
+	scale(sin(frameCount * 0.05) + 1);
+
+}
+
+	</script>
+</body>
+</html>
