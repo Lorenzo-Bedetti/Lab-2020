@@ -1,4 +1,4 @@
-# repository-di-prova
+# Lab 2020
 
 raccolta di progetti di codici
 LAB SUPSI 2020
