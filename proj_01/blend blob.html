@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sketch 1_blend blob</title>
+	<style type="text/css">
+		body {
+			margin:0;
+		}
+		canvas {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+
+	<script>
+	function setup() {
+		createCanvas(windowWidth, windowHeight);
+}
+
+	function draw() {
+		blendMode(BLEND);
+
+	background(240);
+
+
+	blendMode(MULTIPLY);
+
+	noStroke();
+	
+	translate(width/2,height/2);
+	fill(240,240,0);
+	circleLiquid(100,60,25,120);
+	
+	fill(0,240,240);
+	circleLiquid(50,50,15,0);
+
+	fill(240,0,240);
+	circleLiquid(50,20,20,0);
+
+
+}
+
+function circleLiquid(vNnum,nm,sm,fcm){
+	push();
+	rotate(frameCount/fcm);
+	
+	let dr = TWO_PI/vNnum;
+	beginShape();
+		for(let i = 0; i  < vNnum + 0; i++){
+			let ind = i%vNnum;
+			let rad = dr *ind;
+			let r = height*0.2 + noise(frameCount/nm + ind) * height*0.2 + sin(frameCount/sm + ind)*height*0.05;
+		curveVertex(cos(rad)*r, sin(rad)*r);
+	}
+	endShape();
+	pop();
+}
+
+	</script>
+</body>
+</html>
