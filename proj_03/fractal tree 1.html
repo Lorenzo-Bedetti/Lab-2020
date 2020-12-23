@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fractal tree 1</title>
+	<link rel="stylesheet" type="text/css" href="tree_1_style.css">
+	<link rel="stylesheet" type="text/css" href="ramo.js">
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+</head>
+
+<body>
+	
+	<script>
+		var angolo = 0;
+		var slider;
+
+		function setup () {
+			createCanvas (600,600);
+			slider = createSlider (0, TWO_PI, PI / 4, 0.01);
+		}
+
+		function draw() {
+			background(255);
+			angolo = slider.value();
+
+			stroke (0);
+			strokeWeight (2);
+			translate(200,height);
+			ramo(100);
+
+		}
+
+		function ramo(lunghezza) {
+			line(0, 0, 0, - lunghezza);
+			translate(0, - lunghezza);
+			
+			
+			if (lunghezza > 5) {
+				push();
+				rotate(angolo);
+				ramo(lunghezza*0.67);
+				pop();
+				push();
+				//line (0, 0, 0, - lunghezza*0.67);
+				rotate(-angolo);
+				ramo(lunghezza*0.67);
+				pop();
+			}
+		}
+
+
+	</script>
+</body>
+</html>
