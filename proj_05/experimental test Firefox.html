@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>experimental test Firefox</title>
+	<style type="text/css">
+		body {
+			margin:0;
+		}
+		canvas {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+
+	<script>
+
+		let Firefox
+
+		function preload() {
+			
+			//Firefox = loadImage("img/Firefox.png");
+
+			Firefox = loadImage('https://upload.wikimedia.org/wikipedia/it/b/bf/Firefox.png');
+		}
+
+		function setup(){
+			createCanvas(windowWidth, windowHeight);
+			background(80);
+		}
+
+		function draw(){
+
+			translate(mouseX, mouseY);
+			rotate(frameCount * 0.01);
+			scale(sin(frameCount * 0.05) + 1.05);
+
+			image(Firefox, -Firefox.width/2, -Firefox.height/2);
+
+		}
+
+		function mousePressed(){
+			background(255);
+		}
+
+		function windowResized(){
+			resizeCanvas(windowWidth, windowHeight);
+		}
+	</script>
+
+</body>
+</html>
