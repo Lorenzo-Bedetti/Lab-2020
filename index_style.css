@@ -1,0 +1,50 @@
+/* importare I font da google: Frutiger e Roboto
+segnare bene le info in un box e creare per ogni link un riquadro.
+colorare i riquadri
+fare in modo che ogni link porti ad un'altra pagina invece che alla stessa*/
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    border: 1px solid rgb(170, 170, 170);
+}
+li a{
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #000000;
+    border-bottom: 1px solid  rgb(170, 170, 170);
+}
+li a:hover{
+    background-color:#555;
+    color: whitesmoke;
+}
+li:last-child {
+  border-bottom: none;  
+}
+
+
+/* font per titolo, intestazione e link agli sketches */
+h1{
+    font-size: 40px;
+    font-family: "Playfair Display";
+    font-style: inherit;
+    font-weight: 900;
+}
+
+p{
+    font-size: 15px;
+    font-family:"Source Sans Pro";
+    font-weight: 500;
+}
+
+a{
+    font-size: 20px;
+    font-family:"Playfair Display";
+    font-weight: 200;
+
+}
