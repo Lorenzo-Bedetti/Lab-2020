@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Variante 2 del primo esercizio - 
+	utilizzo della funzione Blend + cursore custom -->
 	<title>Sketch 2_blend blob 2</title>
 	<style type="text/css">
 		body {
@@ -18,27 +20,29 @@
 	function setup() {
 		createCanvas(windowWidth, windowHeight);
 }
-
+// blenMode = miscela le forme e i colori
 	function draw() {
 		blendMode(BLEND);
 
 	background(240);
 
-
+// Multiply = moltiplica
 	blendMode(MULTIPLY);
 
 	noStroke();
 	translate(width/2,height/2);
-
+// utilizzo di due colori:
+	// GIALLO
 	fill(240,240,0);
 	circleLiquid(100,60,25,120);
-	
+	// CIANO
 	fill(0,240,240);
 	circleLiquid(50,50,15,0);
 
-// cerchio solido
+// cursore custom
+// cerchio con dimensione variabile che segue il movimento del mouse
 	circleSolid();
-
+// variabile del ciclo
 	for(var i=1; i<50; i++) {
             beginShape();
             var num = i;
@@ -48,27 +52,10 @@
               var py = Math.sin(TWO_PI / num * i) * r;
               vertex(px, py);
             }
-
             endShape(CLOSE);
           }
 }
-
-function circleLiquid(vNnum,nm,sm,fcm){
-	push();
-	rotate(frameCount/fcm);
-	
-	let dr = TWO_PI/vNnum;
-	beginShape();
-		for(let i = 0; i  < vNnum + 0; i++){
-			let ind = i%vNnum;
-			let rad = dr *ind;
-			let r = height*0.2 + noise(frameCount/nm + ind) * height*0.2 + sin(frameCount/sm + ind)*height*0.05;
-		curveVertex(cos(rad)*r, sin(rad)*r);
-	}
-	endShape();
-	pop();
-}
-
+// cursore custom segue il movimento del mouse
 function circleSolid() {
 	var tx = -((windowWidth/2)-mouseX);
 	var ty = -((windowHeight/2)-mouseY);
@@ -78,6 +65,24 @@ function circleSolid() {
 	scale(sin(frameCount * 0.05) + 1);
 
 }
+
+// figure liquide
+function circleLiquid(p1,p2,p3,p4){
+	push();
+	rotate(frameCount/p4);
+// variabili per le forme
+	let dr = TWO_PI/p1;
+	beginShape();
+		for(let i = 0; i  < p1 + 0; i++){
+			let ind = i%p1;
+			let rad = dr *ind;
+			let r = height*0.2 + noise(frameCount/p2 + ind) * height*0.2 + sin(frameCount/p3 + ind)*height*0.05;
+		curveVertex(cos(rad)*r, sin(rad)*r);
+	}
+	endShape();
+	pop();
+}
+
 
 	</script>
 </body>
