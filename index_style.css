@@ -3,47 +3,70 @@ segnare bene le info in un box e creare per ogni link un riquadro.
 colorare i riquadri
 fare in modo che ogni link porti ad un'altra pagina invece che alla stessa*/
 
+/* intero box della lista */
 ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
+    overflow: hidden;
+    background-color: black;
     border: 1px solid rgb(170, 170, 170);
 }
-li a{
+
+/* LISTA */
+/* li{
+    display: inline;
+    float: left;
+} */
+
+
+/* testo e bordo delle varie caselle nella lista */
+    li a{
     display: block;
     text-align: center;
-    padding: 10px 0;
+    padding: 25px 0px;
     text-decoration: none;
-    color: #000000;
+    color:rgb(214, 214, 214);
+ /* traccia delle caselle della lista */
     border-bottom: 1px solid  rgb(170, 170, 170);
 }
-li a:hover{
-    background-color:#555;
-    color: whitesmoke;
+
+ /* trasformazione del testo della lista quando ci si passa sopra con il mouse */
+    li a:hover{
+    background-color:rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
-li:last-child {
-  border-bottom: none;
+    li:last-child {
+    border-bottom: none;
 }
 
 
-/* font per titolo, intestazione e link agli sketches */
+/* font _ titolo */
 h1{
     font-size: 40px;
     font-family: "Montserrat";
     font-style: inherit;
     font-weight: 900;
+    color: white;
 }
-
+/* font _ intestazione */
 p{
     font-size: 12px;
     font-family:"Roboto";
     font-weight: 500;
+    color: rgb(214, 214, 214);
+    text-align: right;
 }
 
+/* font _ link agli sketches*/
 a{
     font-size: 18px;
     font-family:"Montserrat";
     font-weight: 200;
 }
+
+/* traccia che separa l'introduzione dalla lista */
+/* hr{
+
+} */
