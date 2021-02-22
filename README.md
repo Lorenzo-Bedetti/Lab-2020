@@ -1,4 +1,4 @@
-# Lab 2020
+# Lab_codes
 
 Raccolta di sketch di codici per il corso LAB _ SUPSI 2020
 
