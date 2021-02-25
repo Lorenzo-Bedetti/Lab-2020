@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(165, 223, 250);
+}
+
+
+/* 
+DISPLAY INLINE = posiziona tutti gli elementi della classe (esempio: un testo) sulla stessa linea 
+DISPLAY BLOCK = posiziona tutti gli elementi della classe su diversi livelli separati
+*/
+
+element.style {
+    transform: translateX(-3%) rotateY(3.9deg) translateZ(0.9px);
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+    transition-duration: 0s;
+}
+
+.Ptext .Ptext-container {
+    perspective: 1000px;
+    transition: transform .5s ease-out;
+}
+
+.linea1 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+    display: block;
+    transform-origin: center;
+    transition: transform 2s cubic-bezier(.23,1,.32,1), opacity 1.5s ease-out;
+    transform: translateY(0) translateY(0) translateX(0) rotateY(0);
+}
+
+.linea2 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+    display: block;
+    transform-origin: center;
+    
+}
